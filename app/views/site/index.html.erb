@@ -1,0 +1,19 @@
+<div class="masthead">
+  <h3 class="text-muted">Food Whack</h3>
+  <ul class="nav nav-justified">
+    <li class="active"><a href="/">Home</a></li>
+    <li><a href="#">Recipes</a></li>
+    <li><a href="#">Cooking</a></li>
+    <li><a href="#">Restaurants</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>
+<h3 class="text-center">Popular on Instagram</h3>
+<div class="row">
+  <% @response.each do |data| %>
+    <div class="col-md-3">
+      <img src="<%= data["images"]["low_resolution"]["url"] %>" class="img-thumbnail">
+    </div>
+  <% end %>
+</div>
