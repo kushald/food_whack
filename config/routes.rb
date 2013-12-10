@@ -1,11 +1,28 @@
 FoodWhack::Application.routes.draw do
-  get "site/index"
+
+
+   get "site/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
    root 'site#index'
 
+
+  #admin routes
+   namespace :admin do
+   root :to =>'dashboard#index'
+   devise_for :user
+  end
+
+
+ #user authentication routes
+  devise_for :users
+
+  #Admin routes
+  devise_for :adminusers,:controllers => { :registrations => "adminsession",:sessions => "adminregistration" } do
+
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -55,3 +72,4 @@ FoodWhack::Application.routes.draw do
   #     resources :products
   #   end
 end
+

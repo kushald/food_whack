@@ -14,7 +14,7 @@ development:
   database: food_whack_development
   pool: 5
   username: root
-  password:
+  password: NEWPASSWORD
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -26,7 +26,7 @@ test:
   database: food_whack_test
   pool: 5
   username: root
-  password:
+  password: NEWPASSWORD
   socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -35,5 +35,6 @@ production:
   database: food_whack_production
   pool: 5
   username: root
-  password:
+  password: NEWPASSWORD
   socket: /var/run/mysqld/mysqld.sock
+
