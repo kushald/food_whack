@@ -1,7 +1,7 @@
 <div class="row">
   <div id='map'></div>
   <% @fs["groups"][0]["items"].each_with_index do |data,i| %>
-    <div class="col-md-2 tag" style="min-height: 190px;">
+    <div class="col-md-4 tag" style="min-height: 190px;">
       <% 
         if data["categories"].present?
           img = data["categories"][0]["icon"] 

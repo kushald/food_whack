@@ -17,14 +17,13 @@ color: #2C3E50;
 font-weight: bold;
 border: 1px solid;
 padding: 4px;
-margin: 2px;
 border-radius: 7px;
 font-size: 13px;
 display: inline-block;
 }
 
 .tag:hover {
-  background: #2ECC71;
+  background: #3498db;
   color: white;
 }
 
