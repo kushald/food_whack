@@ -9,11 +9,20 @@
     <li><a href="#">Contact</a></li>
   </ul>
 </div>
-<h3 class="text-center">Popular on Instagram</h3>
+<h3 class="text-center">Dosa in Bangalore</h3>
 <div class="row">
-  <% @response.each do |data| %>
-    <div class="col-md-3">
-      <img src="<%= data["images"]["low_resolution"]["url"] %>" class="img-thumbnail">
+  <% @fs["groups"][0]["items"].each_with_index do |data,i| %>
+    <div class="col-md-2 tag" style="min-height: 190px">
+      <% 
+        if data["categories"].present?
+          img = data["categories"][0]["icon"] 
+          name = data["categories"][0]["name"] 
+        end
+      %>
+      <img src="<%= img %>">
+      <h4><%= data["name"] %></h4>
+      <h5><%= name %></h5>
+      <h6 style="color:#D35400;"><b><%= data["location"]["address"] %></b></h6>
     </div>
   <% end %>
 </div>
