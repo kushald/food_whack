@@ -27,19 +27,62 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <form class="navbar-form navbar-left" role="search">
-              <div class="form-group">
-                <input id="geocomplete" type="text" class="form-control" placeholder="Search By Location" size="60">
-              </div>
-            </form>
-            <li><a href="/users/sign_in">Login</a></li>
+            
+            
           </ul>
         </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">Foodwhack</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="/">HOME</a>
+            </li>
+            <li>
+              <a href="#">BLOG</a>
+            </li>
+            <li>
+              <a href="#">HELP</a>
+            </li>
+            <li>
+              <a href="#">ABOUT</a>
+            </li>
+            <li>
+              <a href="#">CONTACT</a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input id="geocomplete" type="text" class="form-control col-lg-2"  name="q" placeholder="e.g, New York">
+              </div>
+            </form>
+            </li>
+            <li><a href="/users/sign_in">Login</a></li>
+          </ul>
+
+        </div>
       </div>
     </div>
   <div class="container">
     <%= yield %>
   </div>
+  <%
+    q = params[:q] || "Bangalore"
+    ll = Geocoder.search("#{q}")
+  %>
   <script type="text/javascript">
     $(document).on('page:fetch',   function() { NProgress.start(); });
     $(document).on('page:change',  function() { NProgress.done(); });
@@ -56,7 +99,7 @@
     var provider = new MM.TemplatedLayer(template, subdomains);
         map = new MM.Map('map', provider, null);
 
-    map.setCenterZoom(new MM.Location(37.811530, -122.2666097), 9);
+    map.setCenterZoom(new MM.Location(12.58, 77.38), 9);
 
     targetZoom = map.getZoom();
     zoomSlider.onchange = function() {

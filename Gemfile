@@ -28,7 +28,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'httpclient'
-
+gem 'geocoder'
 gem 'devise'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -47,4 +47,4 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'pry'
-
+gem 'rails-erd', group: :development

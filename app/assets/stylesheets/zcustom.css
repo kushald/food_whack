@@ -1,0 +1,19 @@
+body {
+  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+}
+
+.centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.navbar {
+  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  background: #EB6864;
+  color: #fff;
+}
