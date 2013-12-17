@@ -86,7 +86,7 @@ config.action_mailer.default_url_options = { :host => 'foodwack.com'
   :address              => "smtp.gmail.com",
   :port                 => 587,
   :domain               => 'gmail.com',
-  :user_name            => 'gameil',
+  :user_name            => 'foodwhack',
   :password             => 'password',
   :authentication       => 'plain',
   :enable_starttls_auto => true  }
