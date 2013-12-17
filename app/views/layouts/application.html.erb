@@ -72,7 +72,7 @@
     <%= yield %>
   </div>
   <%
-    q = params[:q] || "Bangalore"
+    q = params[:q] || "New York"
     ll = Geocoder.search("#{q}")[0].geometry["location"]
   %>
   <script type="text/javascript">

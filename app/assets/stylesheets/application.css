@@ -19,3 +19,9 @@
   box-shadow: 0 5px 10px rgba(16, 42, 46, 0.25);
   margin-bottom: 15px;
 }
+
+#error_explanation {
+	color: #A94442;
+	background-color: #F2DEDE;
+	border-color: #EBCCD1;
+}

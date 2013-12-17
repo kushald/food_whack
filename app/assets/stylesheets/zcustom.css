@@ -20,6 +20,14 @@ a:hover {
 	float: right;
 }
 
+.margin-1 {
+	margin: 0.5%;
+}
+
+.margin-reset {
+	margin: 3% 3% 4% 11%;
+}
+
 .navbar {
   font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
   font-size: 14px;
