@@ -11,21 +11,6 @@
  *= require_self
  *= require_tree .
  */
-.tag {
-text-align: center;
-color: #2C3E50;
-font-weight: bold;
-border: 1px solid;
-padding: 4px;
-border-radius: 7px;
-font-size: 13px;
-display: inline-block;
-}
-
-.tag:hover {
-  background: #3498db;
-  color: white;
-}
 
 #map {
   width: 100%;

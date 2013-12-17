@@ -4,7 +4,6 @@
   <title>FoodWhack</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <script src='https://rawgithub.com/stamen/modestmaps-js/master/modestmaps.min.js'></script>
   <%= csrf_meta_tags %>
 </head>
 <body onload='initMap()'>
@@ -33,7 +32,7 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
-    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <a href="../" class="navbar-brand">Foodwhack</a>
@@ -63,14 +62,7 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li>
-              <form class="navbar-form navbar-left" role="search">
-              <div class="form-group">
-                <input id="geocomplete" type="text" class="form-control col-lg-2"  name="q" placeholder="e.g, New York">
-              </div>
-            </form>
-            </li>
-            <li><a href="/users/sign_in">Login</a></li>
+            <li><a href="/users/sign_in">LOGIN</a></li>
           </ul>
 
         </div>
@@ -81,13 +73,14 @@
   </div>
   <%
     q = params[:q] || "Bangalore"
-    ll = Geocoder.search("#{q}")
+    ll = Geocoder.search("#{q}")[0].geometry["location"]
   %>
   <script type="text/javascript">
     $(document).on('page:fetch',   function() { NProgress.start(); });
     $(document).on('page:change',  function() { NProgress.done(); });
     $(document).on('page:restore', function() { NProgress.remove(); });
     $(document).on('page:load', function() { initMap(); });
+    $('.dropdown-toggle').dropdown();
 
     var zoomSlider = document.getElementById('zoom');
   var zoomValue = document.getElementById('zoomvalue');
@@ -99,7 +92,7 @@
     var provider = new MM.TemplatedLayer(template, subdomains);
         map = new MM.Map('map', provider, null);
 
-    map.setCenterZoom(new MM.Location(12.58, 77.38), 9);
+    map.setCenterZoom(new MM.Location("<%= ll['lat'] %>", "<%= ll['lng'] %>"), 12);
 
     targetZoom = map.getZoom();
     zoomSlider.onchange = function() {

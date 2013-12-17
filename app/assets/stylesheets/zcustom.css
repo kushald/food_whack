@@ -2,9 +2,22 @@ body {
   font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
 }
 
+a {
+	color: #2ecc71;
+}
+
+a:hover {
+	color: #27AE60;
+	text-decoration: none;
+}
+
 .centered {
   float: none;
   margin: 0 auto;
+}
+
+.right {
+	float: right;
 }
 
 .navbar {
@@ -14,6 +27,33 @@ body {
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-  background: #EB6864;
+  background: #27AE60;
   color: #fff;
+}
+
+.srch-inp {
+	float: right;
+	padding: 0;
+	margin-bottom: 0.3%;
+}
+
+#nprogress .bar {
+	background: #27AE60;
+	
+}
+
+textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
+  border-color: #27AE60;
+  box-shadow: 0 1px 1px rgba(50,205,50, 0.075) inset, 0 0 8px rgba(50,205,50, 0.6);
+  outline: 0 none;
+}
+
+.well {
+	background: white;
+}
+
+@media screen and (max-width: 800px) {
+	#map {
+		display: none;
+	}
 }
