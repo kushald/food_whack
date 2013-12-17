@@ -62,9 +62,17 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/users/sign_in">LOGIN</a></li>
+            <% if user_signed_in? %>
+              <li class="primary">
+                <%= link_to(destroy_user_session_path, :method => :get, :class => 'icon-off' ) do %>SIGN OUT
+                <% end %>
+              </li>
+            <% else %>
+              <li class="inverse">
+                <a href="/users/sign_in">LOGIN</a>
+              </li>
+            <% end %>
           </ul>
-
         </div>
       </div>
     </div>

@@ -39,6 +39,10 @@ a:hover {
   color: #fff;
 }
 
+.navbar > .container .navbar-brand {
+	background: #27ae60;
+	color: white;
+}
 .srch-inp {
 	float: right;
 	padding: 0;
