@@ -6,18 +6,20 @@
     </form>
   </div><!-- /input-group -->
   <div id='map'></div>
-  <% @fs["groups"][0]["items"].each_with_index do |data,i| %>
-    <div class="col-md-3" style="min-height:190px;">
-      <% 
-        if data["categories"].present?
-          img = data["categories"][0]["icon"] 
-          name = data["categories"][0]["name"] 
-        end
-      %>
-      <img src="<%= img %>">
-      <div><%= data["name"] %></div>
-      <div><%= name %></div>
-      <h6 style="color:#D35400;"><b><%= data["location"]["address"] %></b></h6>
-    </div>
+  <% if @fs.present? %>
+    <% @fs["groups"][0]["items"].each_with_index do |data,i| %>
+      <div class="col-md-3" style="min-height:190px;">
+        <% 
+          if data["categories"].present?
+            img = data["categories"][0]["icon"] 
+            name = data["categories"][0]["name"] 
+          end
+        %>
+        <img src="<%= img %>">
+        <div><%= data["name"] %></div>
+        <div><%= name %></div>
+        <h6 style="color:#D35400;"><b><%= data["location"]["address"] %></b></h6>
+      </div>
+    <% end %>
   <% end %>
 </div>
